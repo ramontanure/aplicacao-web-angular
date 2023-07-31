@@ -1,0 +1,14 @@
+<div *ngIf="student">
+  <!-- template interpolation, podemos usar um atributo de um componente e colocar aqui -->
+<!-- Caso o estudante seja undefined não tente ler o nome desse objeto-->
+  Stutent: <a href="#" (click)="clicked()">{{student?.name}}</a>
+  <!-- A melhor maneira de voce esconder um elemento é colocar a propriedade ngIF -->
+<!-- Não precisa utilizar a sintaxe de property Biding por que  dentro das aspas ja temos um código angular * -->
+  <div *ngIf="student?.isJedi">
+    Jedi Temple: {{student?.temple}}<button (click)="description.focus()"></button><br>
+    <textarea #description></textarea>
+  </div>
+</div>
+<p *ngIf="!student">
+  Sem dados para exibir!
+</p>
